@@ -23,7 +23,7 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.darshan")) //In the code, the RequestHandlerSelectors.basePackage predicate matches the com.darshan" base package to filter the API. 
                 .build()
                 .apiInfo(metaData());
-	}
+}
 
 	private ApiInfo metaData() {
 	        ApiInfo apiInfo = new ApiInfo(
