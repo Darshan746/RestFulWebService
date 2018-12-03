@@ -16,26 +16,26 @@ import com.darshan.spring.exception.UserNotFoundException;
 @RestController
 public class UserResourceController {
 
-	@Autowired
-	UserServiceDAO service;
-	
-	@GetMapping(value="/users")
-	public List<User> findAllUser(){
-		
-		return service.getAllUsers();
-	}
-	
-	@GetMapping(value="/users/{id}")
-	public User getUser(@PathVariable("id") Integer id) {
-		User user = service.findUser(id);
-		if(user == null) {
-			throw new UserNotFoundException("User not found");
-		}
-		return user;
-	}
-	
-	@PostMapping(value="/users")
-	public void addUser(@Valid @RequestBody User user) {
-		service.addUser(user);
-	}
+//	@Autowired
+//	UserServiceDAO service;
+//	
+//	@GetMapping(value="/users")
+//	public List<User> findAllUser(){
+//		
+//		return service.getAllUsers();
+//	}
+//	
+//	@GetMapping(value="/users/{id}")
+//	public User getUser(@PathVariable("id") Integer id) {
+//		User user = service.findUser(id);
+//		if(user == null) {
+//			throw new UserNotFoundException("User not found");
+//		}
+//		return user;
+//	}
+//	
+//	@PostMapping(value="/users")
+//	public void addUser(@Valid @RequestBody User user) {
+//		service.addUser(user);
+//	}
 }
