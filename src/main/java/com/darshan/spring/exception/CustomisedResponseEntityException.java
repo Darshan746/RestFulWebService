@@ -31,7 +31,14 @@ public class CustomisedResponseEntityException extends ResponseEntityExceptionHa
 		
 		return new ResponseEntity(eceptionResponse,HttpStatus.NOT_FOUND);
 }
-	
+
+	@ExceptionHandler(NullPointerException.class)
+	public  ResponseEntity<Object> handleNullPointerException(Exception ex, WebRequest request) throws Exception {
+		GenericResponseException exceptionResponse = new GenericResponseException(new Date(27091990),ex.getMessage(),"NullPointer Exception");
+
+		return new ResponseEntity(exceptionResponse,HttpStatus.NOT_FOUND);
+	}
+
 	@Override
 	public ResponseEntity<Object> handleMethodArgumentNotValid(
 			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {

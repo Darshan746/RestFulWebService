@@ -1,6 +1,7 @@
 package com.darshan.spring.controller;
 
 
+import com.darshan.spring.aop.TrackTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,5 +28,12 @@ public class UserController {
 	@GetMapping("/secure/all")
 	public String getSecure(){
 		return "secured Access";
+	}
+
+	@GetMapping("/sayHello")
+	@TrackTime
+	public String sayHello(){
+
+		return "Hello User";
 	}
 }
