@@ -21,8 +21,12 @@ public class UserCacheServiceImpl implements  UserCacheService {
   UserCacheServiceImpl (){
   }
 
+  /**
+   *  @PostConstruct this means
+   * When we annotate a method in Spring Bean with @PostConstruct annotation, it gets executed after the spring bean is initialized.
+   */
   @PostConstruct
-  public void initializeuser(){
+  public void initializeUsers(){
     users.add(new UserCacheModel(1,"Rahul"));
     users.add(new UserCacheModel(2 ,"Pandya"));
     users.add(new UserCacheModel(3 ,"Sarvesh"));
