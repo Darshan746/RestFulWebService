@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.darshan.spring.model.UserInfo;
 import com.darshan.spring.service.UserInfoService;
 
+import javax.validation.constraints.Null;
+
 @RestController
 public class UserController {
 
@@ -35,5 +37,10 @@ public class UserController {
 	public String sayHello(){
 
 		return "Hello User";
+	}
+
+	@GetMapping("/exception")
+	public String throwMessage(){
+		throw new NullPointerException();
 	}
 }

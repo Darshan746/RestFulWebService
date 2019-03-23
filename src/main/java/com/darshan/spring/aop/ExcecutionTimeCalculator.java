@@ -22,7 +22,5 @@ public class ExcecutionTimeCalculator {
     proceedingJoinPoint.proceed();
     long timeTaken = System.currentTimeMillis()-statrtTime;
     logger.info("Time taken to complete the "+ " "+timeTaken);
-
-
   }
 }
